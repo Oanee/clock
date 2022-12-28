@@ -26,11 +26,26 @@ body {
   transition: transform 0.2s ease-in-out;
   position: absolute;
   margin-top: 10rem;
-  padding: 10px 30px;
   border: 5px solid #303030;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 7rem;
 }
 
 .clock:hover {
   transform: scale(2);
+}
+
+@media (max-width: 1024px) {
+  .clock {
+    font-size: 3rem;
+    width: 20rem;
+    height: 5rem;
+  }
+
+  .clock:hover {
+    transform: none;
+  }
 }
