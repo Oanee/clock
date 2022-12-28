@@ -18,9 +18,9 @@ body {
 }
 
 .clock {
-  display: flex;
+  display: grid;
+  grid-template-columns: 7rem 2rem 7rem 2rem 7rem;
   font-size: 5rem;
-  gap: 1rem;
   line-height: 5rem;
   cursor: default;
   transition: transform 0.2s ease-in-out;
@@ -38,11 +38,17 @@ body {
   transform: scale(2);
 }
 
+p,
+span {
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .clock {
     font-size: 3rem;
     width: 20rem;
     height: 5rem;
+    grid-template-columns: 4rem 1.5rem 4rem 1.5rem 4rem;
   }
 
   .clock:hover {
