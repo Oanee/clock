@@ -1,28 +1,22 @@
 let seconds = document.getElementById("seconds");
 let minutes = document.getElementById("minutes");
 let hours = document.getElementById("hours");
-let weeks = document.getElementById("weeks");
+let days = document.getElementById("days");
+let weekdays = document.getElementById("weekdays");
+let months = document.getElementById("months");
 let years = document.getElementById("years");
 
 function showTime() {
   const date = new Date();
-  let s = formatTime(date.getSeconds());
-  let m = formatTime(date.getMinutes());
-  let h = formatTime(date.getHours());
+  let second = formatTime(date.getSeconds());
+  let minute = formatTime(date.getMinutes());
+  let hour = formatTime(date.getHours());
+  let day = formatTime(date.getDate());
+  let weekday = date.getDay();
+  let month = formatTime(date.getMonth());
+  let year = formatTime(date.getFullYear());
 
   setTimeout(showTime, 1000);
-
-  // if (s < 10) {
-  //   s = "0" + s;
-  // }
-
-  // if (m < 10) {
-  //   m = "0" + m;
-  // }
-
-  // if (h < 10) {
-  //   h = "0" + h;
-  // }
 
   function formatTime(time) {
     if (time < 10) {
@@ -31,9 +25,42 @@ function showTime() {
     return time;
   }
 
-  seconds.innerText = s;
-  minutes.innerText = m;
-  hours.innerText = h;
+  switch (weekday) {
+    case 1:
+      weekdays.innerText = "Monday";
+      break;
+
+    case 2:
+      weekdays.innerText = "Tuesday";
+      break;
+
+    case 3:
+      weekdays.innerText = "Wednesday";
+      break;
+
+    case 4:
+      weekdays.innerText = "Thursday";
+      break;
+
+    case 5:
+      weekdays.innerText = "Friday";
+      break;
+
+    case 6:
+      weekdays.innerText = "Saturday";
+      break;
+
+    case 7:
+      weekdays.innerText = "Sunday";
+      break;
+  }
+
+  seconds.innerText = second;
+  minutes.innerText = minute;
+  hours.innerText = hour;
+  days.innerText = day;
+  months.innerText = month;
+  years.innerText = year;
 }
 
 showTime();
