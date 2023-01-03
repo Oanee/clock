@@ -13,7 +13,7 @@ function showTime() {
   let hour = formatTime(date.getHours());
   let day = formatTime(date.getDate());
   let weekday = date.getDay();
-  let month = formatTime(date.getMonth());
+  let month = formatTime(date.getMonth() + 1);
   let year = formatTime(date.getFullYear());
 
   setTimeout(showTime, 1000);
