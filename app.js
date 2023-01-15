@@ -26,6 +26,10 @@ function showTime() {
   }
 
   switch (weekday) {
+    case 0:
+      weekdays.innerText = "Sunday";
+      break;
+
     case 1:
       weekdays.innerText = "Monday";
       break;
@@ -48,10 +52,6 @@ function showTime() {
 
     case 6:
       weekdays.innerText = "Saturday";
-      break;
-
-    case 7:
-      weekdays.innerText = "Sunday";
       break;
   }
 
